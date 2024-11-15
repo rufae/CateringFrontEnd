@@ -1,59 +1,61 @@
 <div class="container">
-  <h2>Gestión de Encargos</h2>
+    <h2 class="titulo">Gestión de Encargos</h2>
 
-  <!-- Formulario para agregar/actualizar encargo -->
-  <form (ngSubmit)="guardarEncargo()">
-    <div>
-      <label for="cliente">Cliente:</label>
-      <select id="cliente" [(ngModel)]="encargo.clienteId" name="cliente" required>
-        <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }} {{ cliente.apellido }}</option>
-      </select>
-    </div>
-    <div>
-      <label for="menu">Menú:</label>
-      <select id="menu" [(ngModel)]="encargo.menuId" name="menu" required>
-        <option *ngFor="let menu of menus" [value]="menu.idMenu">{{ menu.nombre }} - {{ menu.precio | currency }}</option>
-      </select>
-    </div>
-    <div>
-      <label for="fechaEncargo">Fecha de Encargo:</label>
-      <input type="date" id="fechaEncargo" [(ngModel)]="encargo.fechaEncargo" name="fechaEncargo" required />
-    </div>
-    <div>
-      <label for="fechaEntrega">Fecha de Entrega:</label>
-      <input type="date" id="fechaEntrega" [(ngModel)]="encargo.fechaEntrega" name="fechaEntrega" required />
-    </div>
-    <button type="submit">{{ encargo.id ? 'Actualizar Encargo' : 'Crear Encargo' }}</button>
-    <button type="button" (click)="cancelarEdicion()" *ngIf="encargo.id">Cancelar</button>
-  </form>
+    <!-- Formulario para agregar/actualizar encargo -->
+    <form (ngSubmit)="guardarEncargo()" class="formulario">
+        <div class="campo">
+            <label for="cliente">Cliente:</label>
+            <select id="cliente" [(ngModel)]="encargo.clienteId" name="cliente" required class="input">
+                <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }} {{ cliente.apellido }}</option>
+            </select>
+        </div>
+        <div class="campo">
+            <label for="menu">Menú:</label>
+            <select id="menu" [(ngModel)]="encargo.menuId" name="menu" required class="input">
+                <option *ngFor="let menu of menus" [value]="menu.idMenu">{{ menu.nombre }} - {{ menu.precio | currency }}</option>
+            </select>
+        </div>
+        <div class="campo">
+            <label for="fechaEncargo">Fecha de Encargo:</label>
+            <input type="date" id="fechaEncargo" [(ngModel)]="encargo.fechaEncargo" name="fechaEncargo" required class="input" />
+        </div>
+        <div class="campo">
+            <label for="fechaEntrega">Fecha de Entrega:</label>
+            <input type="date" id="fechaEntrega" [(ngModel)]="encargo.fechaEntrega" name="fechaEntrega" required class="input" />
+        </div>
+        <div class="botones">
+            <button type="submit" class="btn-submit">{{ encargo.id ? 'Actualizar Encargo' : 'Crear Encargo' }}</button>
+            <button type="button" class="btn-cancelar" (click)="cancelarEdicion()" *ngIf="encargo.id">Cancelar</button>
+        </div>
+    </form>
 
-  <hr />
+    <hr class="separador" />
 
-  <!-- Lista de encargos -->
-  <h3>Encargos</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Cliente</th>
-      <th>Menú</th>
-      <th>Fecha de Encargo</th>
-      <th>Fecha de Entrega</th>
-      <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let enc of encargos">
-      <td>{{ enc.id }}</td>
-      <td>{{ enc.cliente.nombre }} {{ enc.cliente.apellido }}</td>
-      <td>{{ enc.menu.nombre }}</td>
-      <td>{{ enc.fechaEncargo }}</td>
-      <td>{{ enc.fechaEntrega }}</td>
-      <td>
-        <button (click)="editarEncargo(enc)">Editar</button>
-        <button (click)="eliminarEncargo(enc.id)">Eliminar</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <!-- Lista de encargos -->
+    <h3 class="titulo-lista">Encargos</h3>
+    <table class="tabla">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Menú</th>
+            <th>Fecha de Encargo</th>
+            <th>Fecha de Entrega</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let enc of encargos">
+            <td>{{ enc.id }}</td>
+            <td>{{ enc.cliente.nombre }} {{ enc.cliente.apellido }}</td>
+            <td>{{ enc.menu.nombre }}</td>
+            <td>{{ enc.fechaEncargo }}</td>
+            <td>{{ enc.fechaEntrega }}</td>
+            <td>
+                <button class="btn-editar" (click)="editarEncargo(enc)">Editar</button>
+                <button class="btn-eliminar" (click)="eliminarEncargo(enc.id)">Eliminar</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
