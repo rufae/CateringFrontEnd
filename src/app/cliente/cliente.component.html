@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Gestión de Clientes</h2>
+
+  <!-- Formulario para agregar/actualizar cliente -->
+  <form (ngSubmit)="guardarCliente()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required />
+    </div>
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" [(ngModel)]="cliente.apellido" name="apellido" required />
+    </div>
+    <div>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" [(ngModel)]="cliente.direccion" name="direccion" required />
+    </div>
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" [(ngModel)]="cliente.telefono" name="telefono" required />
+    </div>
+    <button type="submit">{{ cliente.id ? 'Actualizar Cliente' : 'Crear Cliente' }}</button>
+    <button type="button" (click)="cancelarEdicion()" *ngIf="cliente.id">Cancelar</button>
+  </form>
+
+  <hr />
+
+  <!-- Lista de clientes -->
+  <h3>Clientes</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cli of clientes">
+      <td>{{ cli.id }}</td>
+      <td>{{ cli.nombre }}</td>
+      <td>{{ cli.apellido }}</td>
+      <td>{{ cli.direccion }}</td>
+      <td>{{ cli.telefono }}</td>
+      <td>
+        <button (click)="editarCliente(cli)">Editar</button>
+        <button (click)="eliminarCliente(cli.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

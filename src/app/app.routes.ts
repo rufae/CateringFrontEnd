@@ -10,4 +10,20 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'encargo',
+    loadComponent: () => import('./encargo/encargo.component').then( m => m.EncargoComponent)
+  },
+  {
+    path: 'menu',
+    loadComponent: () => import('./menu/menu.component').then( m => m.MenuComponent)
+  },
+  {
+    path: 'clientes',
+    loadComponent: () => import('./cliente/cliente.component').then( m => m.ClienteComponent)
+  },
+  {
+    path: 'empleado',
+    loadComponent: () => import('./empleado/empleado.component').then( m => m.EmpleadoComponent)
+  },
 ];
