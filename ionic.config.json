@@ -1,0 +1,7 @@
+{
+  "name": "EncargoFrontEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
