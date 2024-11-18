@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo o título del proyecto -->
+        <a class="navbar-brand" (click)="navigateTo('home')">Catering App</a>
+
+        <!-- Menú de navegación -->
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                <a (click)="navigateTo('clientes')">Clientes</a>
+            </li>
+            <li class="navbar-item">
+                <a (click)="navigateTo('encargo')">Encargos</a>
+            </li>
+            <li class="navbar-item">
+                <a (click)="navigateTo('menu')">Menús</a>
+            </li>
+            <li class="navbar-item">
+                <a (click)="navigateTo('empleado')">Empleados</a>
+            </li>
+        </ul>
+    </div>
+</nav>

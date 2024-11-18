@@ -1,0 +1,65 @@
+/* Navbar principal */
+.navbar {
+    position: fixed; /* Fija el navbar en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la página */
+    z-index: 1000; /* Asegúrate de que tenga una prioridad alta */
+    background-color: #007BFF; /* Fondo para que sea visible */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+
+/* Contenedor del navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo o título */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menú */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Elementos del menú */
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover */
+.navbar-item a:hover {
+    background-color: #0056b3;
+}
+
+/* Ruta activa */
+.navbar-item .active {
+    background-color: #0056b3;
+    font-weight: bold;
+}

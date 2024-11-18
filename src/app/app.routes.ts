@@ -26,4 +26,8 @@ export const routes: Routes = [
     path: 'empleado',
     loadComponent: () => import('./empleado/empleado.component').then( m => m.EmpleadoComponent)
   },
+    {
+        path: 'navbar',
+        loadComponent: () => import('./navbar/navbar.component').then( m => m.NavbarComponent)
+    }
 ];
