@@ -1,53 +1,62 @@
-<br><br>
+<html>
 
-<div class="container">
-    <h2 class="titulo">Gestión de Menús</h2>
+    <body>
 
-    <!-- Formulario para agregar/actualizar menú -->
-    <form (ngSubmit)="guardarMenu()" class="formulario">
-        <div class="campo">
-            <label for="nombre">Nombre:</label>
-            <input id="nombre" [(ngModel)]="menu.nombre" name="nombre" required class="input"/>
-        </div>
-        <div class="campo">
-            <label for="descripcion">Descripción:</label>
-            <input id="descripcion" [(ngModel)]="menu.descripcion" name="descripcion" required class="input"/>
-        </div>
-        <div class="campo">
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" [(ngModel)]="menu.precio" name="precio" required min="0" step="0.01" class="input"/>
-        </div>
-        <div class="botones">
-            <button type="submit" class="btn-submit">{{ menu.idMenu ? 'Actualizar Menú' : 'Crear Menú' }}</button>
-            <button type="button" class="btn-cancelar" (click)="cancelarEdicion()" *ngIf="menu.idMenu">Cancelar</button>
-        </div>
-    </form>
+    <br><br>
 
-    <hr class="separador" />
+    <div class="container">
+        <h2 class="titulo">Gestión de Menús</h2>
 
-    <!-- Lista de menús -->
-    <h3 class="titulo-lista">Menús</h3>
-    <table class="tabla">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let m of menus">
-            <td>{{ m.idMenu }}</td>
-            <td>{{ m.nombre }}</td>
-            <td>{{ m.descripcion }}</td>
-            <td>{{ m.precio | currency }}</td>
-            <td>
-                <button class="btn-editar" (click)="editarMenu(m)">Editar</button>
-                <button class="btn-eliminar" (click)="eliminarMenu(m.idMenu)">Eliminar</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        <!-- Formulario para agregar/actualizar menú -->
+        <form (ngSubmit)="guardarMenu()" class="formulario">
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" placeholder="Introduce tu nombre" [(ngModel)]="menu.nombre" name="nombre" required class="input"/>
+            </div>
+            <div class="campo">
+                <label for="descripcion">Descripción:</label>
+                <input id="descripcion" placeholder="Introduce tu dirección" [(ngModel)]="menu.descripcion" name="descripcion" required class="input"/>
+            </div>
+            <div class="campo">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" [(ngModel)]="menu.precio" name="precio" required min="0" step="0.01" class="input"/>
+            </div>
+            <div class="botones">
+                <button type="submit" class="btn-submit">{{ menu.idMenu ? 'Actualizar Menú' : 'Crear Menú' }}</button>
+                <button type="button" class="btn-cancelar" (click)="cancelarEdicion()" *ngIf="menu.idMenu">Cancelar</button>
+            </div>
+        </form>
+
+        <hr class="separador" />
+
+        <!-- Lista de menús -->
+        <h3 class="titulo-lista">Menús</h3>
+        <table class="tabla">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let m of menus">
+                <td>{{ m.idMenu }}</td>
+                <td>{{ m.nombre }}</td>
+                <td>{{ m.descripcion }}</td>
+                <td>{{ m.precio | currency }}</td>
+                <td>
+                    <button class="btn-editar" (click)="editarMenu(m)">Editar</button>
+                    <button class="btn-eliminar" (click)="eliminarMenu(m.idMenu)">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-footer></app-footer>
+    </body>
+
+</html>

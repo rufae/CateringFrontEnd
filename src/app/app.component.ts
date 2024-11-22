@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 import {NavbarComponent} from "./navbar/navbar.component";
-import {FooterComponent} from "./footer/footer.component";
+import {IonicModule} from "@ionic/angular";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  standalone: true,
-    imports: [IonApp, IonRouterOutlet, NavbarComponent, FooterComponent],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [
+        NavbarComponent,
+        IonicModule,
+        CommonModule
+    ],
+    standalone: true
 })
 export class AppComponent {
-  constructor() {}
+    mostrarNavbar = true; // Controla la visibilidad del navbar
+
+    constructor(private router: Router) {
+        // Escucha los cambios de ruta
+        this.router.events.subscribe(() => {
+            // Comprueba si la ruta es '/login'
+            this.mostrarNavbar = this.router.url !== '/login';
+        });
+    }
 }

@@ -3,16 +3,18 @@ import { Empleado } from '../Model/empleado.model';
 import { EmpleadoService } from '../Service/empleado.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
   standalone: true,
   styleUrls: ['./empleado.component.scss'],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FooterComponent
+    ]
 })
 export class EmpleadoComponent implements OnInit {
   empleados: Empleado[] = [];

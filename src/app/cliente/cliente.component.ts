@@ -4,16 +4,18 @@ import { ClienteService } from '../Service/cliente.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {provideHttpClient} from "@angular/common/http";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
   standalone: true,
   styleUrls: ['./cliente.component.scss'],
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        FooterComponent
+    ],
 })
 export class ClienteComponent implements OnInit {
   clientes: Cliente[] = [];

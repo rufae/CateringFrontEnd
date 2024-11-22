@@ -1,59 +1,68 @@
-<br><br>
+<html>
 
-<div class="container">
-    <h2 class="titulo">Gestión de Empleados</h2>
+    <body>
 
-    <!-- Formulario para agregar/actualizar empleado -->
-    <form class="formulario" (ngSubmit)="guardarEmpleado()">
-        <div class="campo">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" [(ngModel)]="empleado.nombre" name="nombre" required class="input" />
-        </div>
-        <div class="campo">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" [(ngModel)]="empleado.apellido" name="apellido" required class="input" />
-        </div>
-        <div class="campo">
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" [(ngModel)]="empleado.direccion" name="direccion" required class="input" />
-        </div>
-        <div class="campo">
-            <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" [(ngModel)]="empleado.telefono" name="telefono" required class="input" />
-        </div>
-        <div class="botones">
-            <button type="submit" class="btn-submit">{{ empleado.id ? 'Actualizar Empleado' : 'Crear Empleado' }}</button>
-            <button type="button" class="btn-cancelar" (click)="cancelarEdicion()" *ngIf="empleado.id">Cancelar</button>
-        </div>
-    </form>
+    <br><br>
 
-    <hr class="separador" />
+    <div class="container">
+        <h2 class="titulo">Gestión de Empleados</h2>
 
-    <!-- Lista de empleados -->
-    <h3 class="titulo-lista">Empleados</h3>
-    <table class="tabla">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Dirección</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let emp of empleados">
-            <td>{{ emp.id }}</td>
-            <td>{{ emp.nombre }}</td>
-            <td>{{ emp.apellido }}</td>
-            <td>{{ emp.direccion }}</td>
-            <td>{{ emp.telefono }}</td>
-            <td>
-                <button class="btn-editar" (click)="editarEmpleado(emp)">Editar</button>
-                <button class="btn-eliminar" (click)="eliminarEmpleado(emp.id)">Eliminar</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+        <!-- Formulario para agregar/actualizar empleado -->
+        <form class="formulario" (ngSubmit)="guardarEmpleado()">
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Introduce tu nombre" [(ngModel)]="empleado.nombre" name="nombre" required class="input" />
+            </div>
+            <div class="campo">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" placeholder="Introduce tu apellido" [(ngModel)]="empleado.apellido" name="apellido" required class="input" />
+            </div>
+            <div class="campo">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Introduce tu dirección" [(ngModel)]="empleado.direccion" name="direccion" required class="input" />
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" placeholder="Introduce tu número de teléfono" [(ngModel)]="empleado.telefono" name="telefono" required class="input" />
+            </div>
+            <div class="botones">
+                <button type="submit" class="btn-submit">{{ empleado.id ? 'Actualizar Empleado' : 'Crear Empleado' }}</button>
+                <button type="button" class="btn-cancelar" (click)="cancelarEdicion()" *ngIf="empleado.id">Cancelar</button>
+            </div>
+        </form>
+
+        <hr class="separador" />
+
+        <!-- Lista de empleados -->
+        <h3 class="titulo-lista">Empleados</h3>
+        <table class="tabla">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let emp of empleados">
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.nombre }}</td>
+                <td>{{ emp.apellido }}</td>
+                <td>{{ emp.direccion }}</td>
+                <td>{{ emp.telefono }}</td>
+                <td>
+                    <button class="btn-editar" (click)="editarEmpleado(emp)">Editar</button>
+                    <button class="btn-eliminar" (click)="eliminarEmpleado(emp.id)">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <app-footer></app-footer>
+    </body>
+
+</html>

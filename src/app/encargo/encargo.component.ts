@@ -7,6 +7,7 @@ import { ClienteService } from '../Service/cliente.service';
 import { MenuService } from '../Service/menu.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
     selector: 'app-encargo',
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./encargo.component.scss'],
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        FooterComponent
     ]
 })
 export class EncargoComponent implements OnInit {

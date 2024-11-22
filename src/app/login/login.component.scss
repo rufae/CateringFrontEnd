@@ -7,21 +7,20 @@ html, body {
     background-color: #f9f9f9;
 }
 
-
 /* Contenedor principal */
-.container {
+.login-container {
     width: 100%;
-    max-width: 1000px;
-    margin: 5% auto;
+    max-width: 400px;
+    margin: 4.5% auto;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
 }
 
-
-/* Título principal */
+/* Título */
 h2 {
     text-align: center;
     color: #333;
@@ -30,12 +29,12 @@ h2 {
 }
 
 /* Formulario */
-.formulario {
+.formulario-login {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .campo {
@@ -66,12 +65,12 @@ label {
 /* Botones */
 .botones {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .btn-submit {
-    background-color: #28a745;
+    background-color: #007BFF;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -82,22 +81,7 @@ label {
 }
 
 .btn-submit:hover {
-    background-color: #218838;
-}
-
-.btn-cancelar {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-cancelar:hover {
-    background-color: #c82333;
+    background-color: #0056b3;
 }
 
 /* Separador */
@@ -107,67 +91,28 @@ label {
     margin: 20px 0;
 }
 
-/* Título de la lista */
-.titulo-lista {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
+/* Registro */
+.registro {
     text-align: center;
-}
-
-/* Tabla de clientes */
-.tabla {
-    width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    p {
+        color: #333;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
 }
 
-.tabla th,
-.tabla td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.tabla th {
-    background-color: #007BFF;
+.btn-registro {
+    background-color: #28a745;
     color: #fff;
-    font-size: 1.1rem;
-}
-
-.tabla tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.tabla tbody tr:hover {
-    background-color: #e9ecef;
-}
-
-.tabla button {
-    padding: 6px 12px;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.btn-editar {
-    background-color: #ffc107;
-    color: #fff;
-}
-
-.btn-editar:hover {
-    background-color: #e0a800;
-}
-
-.btn-eliminar {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-.btn-eliminar:hover {
-    background-color: #c82333;
+.btn-registro:hover {
+    background-color: #218838;
 }

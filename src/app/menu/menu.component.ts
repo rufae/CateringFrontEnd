@@ -3,16 +3,18 @@ import { Menu } from '../Model/menu.model';
 import { MenuService } from '../Service/menu.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FooterComponent
+    ]
 })
 export class MenuComponent implements OnInit {
   menus: Menu[] = [];

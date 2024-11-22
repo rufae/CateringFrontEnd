@@ -1,15 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
 /* Contenedor principal */
 .container {
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 5% auto;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Habilita el desplazamiento vertical cuando sea necesario */
-    max-height: 90vh;
+    max-height: unset;
+    background-color: #fff;
 }
 
 /* Título principal */
